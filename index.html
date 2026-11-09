@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Poker Night — Nov 20</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+
+    <header class="hero">
+      <h1>Poker Night</h1>
+      <p class="subhead">Friday, November 20 · The White House, Atlanta</p>
+    </header>
+
+    <section class="stats" aria-label="Live pot and payout estimate">
+      <p id="statNote" class="stat-note" hidden></p>
+      <div id="overflowBanner" class="banner" hidden>Tournament full — contact Joey about overflow</div>
+
+      <div class="stat-grid">
+        <div class="stat-tile">
+          <div class="stat-number" id="statSpots">—</div>
+          <div class="stat-label" id="statSpotsLabel">Spots filled</div>
+          <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-number" id="statPot">—</div>
+          <div class="stat-label">Live pot, grows with every signup</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-number" id="statFirst">—</div>
+          <div class="stat-label">1st place (60%)</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-number" id="statSecondThird">—</div>
+          <div class="stat-label">2nd / 3rd (25% / 15%)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="details">
+      <h2>Details</h2>
+      <ul class="detail-list">
+        <li><strong>When:</strong> Friday, November 20. Doors 7:30pm, cards in the air 8:00pm sharp. Hard stop 11:00pm. Mr. C's after for anyone still standing, very optional.</li>
+        <li><strong>Where:</strong> The White House, 2073 McKinley Rd NW, Atlanta, GA 30318. Garage and breezeway.</li>
+        <li><strong>Entry:</strong> $50. Every dollar goes to the pot. No rake, no buy-backs.</li>
+        <li><strong>BYOB.</strong> Bring your own drinks and one snack to share. Ice, cups, and water are covered.</li>
+        <li><strong>Paying in:</strong> Venmo @joey-white-1 by 5:00pm Thursday, November 19. First 24 paid are in. Paid means in; unpaid means not in. First player eliminated is appointed Commissioner of Consolation Buy-Backs, a role with no budget and no authority.</li>
+      </ul>
+    </section>
+
+    <section class="details">
+      <h2>Structure</h2>
+      <ul class="detail-list">
+        <li><strong>Starting stack:</strong> 50 chips</li>
+        <li><strong>Blinds:</strong> Big blind only, no small blind</li>
+        <li><strong>45-minute levels:</strong> 8:00 BB 2 / 8:45 BB 4 / 9:30 BB 6 / 10:15 BB 10 / 10:45 BB 15</li>
+        <li>Tables consolidate as players bust</li>
+        <li>Winner takes all remaining chips. If no single winner by 11:00pm, final standings are set by chip count at 11:00pm.</li>
+      </ul>
+    </section>
+
+    <section class="details">
+      <h2>Day-of roles</h2>
+      <ul class="detail-list">
+        <li><strong>Bank and Treasury:</strong> Joey</li>
+        <li><strong>Pace of Play and Raises:</strong> Brett</li>
+        <li><strong>Attorney on Site, Arbiter of Rules:</strong> Wes</li>
+      </ul>
+    </section>
+
+    <section class="faq">
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>I'm bored of Texas hold'em. I know this great game me and my high school friends play, it's definitely skill based. Can we just do one round?</summary>
+        <p>No.</p>
+      </details>
+
+      <details>
+        <summary>What happened to the beer and snacks?</summary>
+        <p>You're bringing them. In exchange, 100% of your entry goes into the pot instead of 70%. You are paying a third less for essentially the same prize money.</p>
+      </details>
+
+      <details>
+        <summary>I was eliminated really early and I don't want to go home yet. What have you organized for me to do after I bust out?</summary>
+        <p>Sorry to hear that, Trey. Eliminated players are welcome and encouraged to grab a table and keep playing, for fun or for a side pot. That will not be run through the club Venmo.</p>
+      </details>
+
+      <details>
+        <summary>If I was eliminated early and I want to play games other than Texas hold'em, can I?</summary>
+        <p>Absolutely.</p>
+      </details>
+
+      <details>
+        <summary>Can I pay in cash?</summary>
+        <p>Venmo keeps the ledger clean. If cash is the only way, text Joey first and he'll mark you paid manually.</p>
+      </details>
+
+      <details>
+        <summary>Can I invite others?</summary>
+        <p>Yes, please. Forward the link. Give a few days' heads up so we can plan tables.</p>
+      </details>
+
+      <details>
+        <summary>Do I need to bring a table or chips?</summary>
+        <p>No. Joey has 2 tables, Scott Marshall and Rob Joseph each have one that seats 8.</p>
+      </details>
+
+      <details>
+        <summary>How many spots?</summary>
+        <p>Capped at 24. It has been said that Rob Joseph has a table that could push capacity to 30 to 32.</p>
+      </details>
+
+      <details>
+        <summary>What happens at 11:00pm if there's no winner?</summary>
+        <p>Chip count at 11:00 sharp sets the final three. Brett is on the clock all night for exactly this reason.</p>
+      </details>
+    </section>
+
+    <section class="signup" id="signupSection">
+      <h2>Sign up</h2>
+
+      <p id="formError" class="form-error" hidden>Something went wrong submitting. Please try again, or text Joey directly.</p>
+
+      <form id="signupForm" novalidate>
+        <label for="fieldName">Name</label>
+        <input type="text" id="fieldName" name="name" required />
+        <p class="field-error" id="errName" hidden></p>
+
+        <label for="fieldEmail">Email</label>
+        <input type="email" id="fieldEmail" name="email" required />
+        <p class="field-error" id="errEmail" hidden></p>
+
+        <label for="fieldPhone">Phone</label>
+        <input type="tel" id="fieldPhone" name="phone" required />
+        <p class="field-error" id="errPhone" hidden></p>
+
+        <fieldset class="payment-choice">
+          <legend>Payment method</legend>
+          <label class="radio-label"><input type="radio" name="paymentMethod" value="Venmo" required checked /> Venmo</label>
+          <label class="radio-label"><input type="radio" name="paymentMethod" value="Cash or other — I'll coordinate with Joey directly" /> Cash or other — I'll coordinate with Joey directly</label>
+        </fieldset>
+        <p class="field-error" id="errPayment" hidden></p>
+
+        <label for="fieldNotes">Notes (optional)</label>
+        <textarea id="fieldNotes" name="notes" rows="2" placeholder="Bringing a guest, snack you're bringing, etc."></textarea>
+
+        <button type="submit" id="submitBtn">Sign up</button>
+      </form>
+    </section>
+
+    <section class="confirmation" id="confirmSection" hidden>
+      <h2 id="confirmHeadline">You're signed up.</h2>
+
+      <div id="venmoBlock" hidden>
+        <a class="btn btn-primary" id="venmoBtn" href="#">Pay $50 on Venmo</a>
+        <p class="muted">If that doesn't open the app, search @joey-white-1 in Venmo.</p>
+      </div>
+
+      <p id="cashBlock" hidden>Got it — coordinate payment with Joey directly before Thursday 5pm.</p>
+
+      <div class="cal-row">
+        <a class="btn" id="gcalBtn" target="_blank" rel="noopener" href="#">Add to Google Calendar</a>
+        <button class="btn" id="icsBtn" type="button">Download .ics</button>
+      </div>
+
+      <button class="btn" id="shareBtn" type="button">Share this invite</button>
+      <p id="shareToast" class="muted" hidden>Link copied.</p>
+      <input type="text" id="shareFallbackInput" class="share-fallback-input" readonly hidden />
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
