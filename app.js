@@ -1,5 +1,5 @@
 // Set this after deploying apps-script/Code.gs as a Web App. See README.md
-const SCRIPT_URL = "REPLACE_WITH_APPS_SCRIPT_WEB_APP_URL";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkQYnrUfnAqVZrVM_M5_wCOnE5_UQf9uConXKvPZMuD_dqijdbubfWcu_R7_92mrUO/exec";
 
 const ENTRY_FEE = 50;
 const PRIMARY_CAP = 24;
