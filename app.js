@@ -261,7 +261,7 @@ function showConfirmation(fields) {
   const gcalBtn = document.getElementById("gcalBtn");
   const gcalParams = new URLSearchParams({
     action: "TEMPLATE",
-    text: "Poker Night",
+    text: "2026 White House Poker Classic",
     dates: gcalDates,
     details: details,
     location: EVENT_LOCATION,
@@ -316,11 +316,11 @@ function downloadIcs() {
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Poker Night//EN",
+    "PRODID:-//2026 White House Poker Classic//EN",
     "BEGIN:VEVENT",
     `UID:${uid}`,
     `DTSTAMP:${dtstamp}`,
-    "SUMMARY:Poker Night",
+    "SUMMARY:2026 White House Poker Classic",
     // Fixed UTC instants for Nov 20 2026, 8:00pm-11:00pm America/New_York.
     "DTSTART:20261121T010000Z",
     "DTEND:20261121T040000Z",
@@ -334,7 +334,7 @@ function downloadIcs() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "poker-night.ics";
+  a.download = "2026-white-house-poker-classic.ics";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -343,8 +343,8 @@ function downloadIcs() {
 
 async function shareInvite() {
   const shareData = {
-    title: "Poker Night",
-    text: "Join me for Poker Night Nov 20...",
+    title: "2026 White House Poker Classic",
+    text: "Join me for the 2026 White House Poker Classic, Nov 20...",
     url: window.location.href,
   };
 
