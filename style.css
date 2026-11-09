@@ -125,6 +125,11 @@ h2 {
   color: var(--muted);
 }
 
+.stat-caption {
+  text-align: center;
+  margin: 12px 0 0;
+}
+
 .progress {
   margin-top: 10px;
   height: 6px;
@@ -186,6 +191,11 @@ form {
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+#signupSection[hidden],
+form[hidden] {
+  display: none;
 }
 
 label {

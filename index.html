@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Poker Night — Nov 20</title>
+<title>Poker Night, Nov 20</title>
 <link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:," />
 </head>
 <body>
   <main class="wrap">
@@ -16,7 +17,7 @@
 
     <section class="stats" aria-label="Live pot and payout estimate">
       <p id="statNote" class="stat-note" hidden></p>
-      <div id="overflowBanner" class="banner" hidden>Tournament full — contact Joey about overflow</div>
+      <div id="overflowBanner" class="banner" hidden>Tournament full. Message Joey directly to ask about an overflow spot.</div>
 
       <div class="stat-grid">
         <div class="stat-tile">
@@ -37,6 +38,7 @@
           <div class="stat-label">2nd / 3rd (25% / 15%)</div>
         </div>
       </div>
+      <p class="stat-caption muted">Based on signups, not confirmed payment.</p>
     </section>
 
     <section class="details">
@@ -55,8 +57,9 @@
       <ul class="detail-list">
         <li><strong>Starting stack:</strong> 50 chips</li>
         <li><strong>Blinds:</strong> Big blind only, no small blind</li>
-        <li><strong>45-minute levels:</strong> 8:00 BB 2 / 8:45 BB 4 / 9:30 BB 6 / 10:15 BB 10 / 10:45 BB 15</li>
+        <li><strong>Blind levels:</strong> 8:00 BB 2 / 8:45 BB 4 / 9:30 BB 6 / 10:15 BB 10 / 10:45 BB 15</li>
         <li>Tables consolidate as players bust</li>
+        <li><strong>Payouts:</strong> 1st 60%, 2nd 25%, 3rd 15% of the pot</li>
         <li>Winner takes all remaining chips. If no single winner by 11:00pm, final standings are set by chip count at 11:00pm.</li>
       </ul>
     </section>
@@ -80,7 +83,7 @@
 
       <details>
         <summary>What happened to the beer and snacks?</summary>
-        <p>You're bringing them. In exchange, 100% of your entry goes into the pot instead of 70%. You are paying a third less for essentially the same prize money.</p>
+        <p>You're bringing them. In exchange, 100% of your entry goes into the pot, no cut for beer, food, or trophy. And at $50 instead of the original $75 idea, you're paying a third less too.</p>
       </details>
 
       <details>
@@ -139,8 +142,8 @@
 
         <fieldset class="payment-choice">
           <legend>Payment method</legend>
-          <label class="radio-label"><input type="radio" name="paymentMethod" value="Venmo" required checked /> Venmo</label>
-          <label class="radio-label"><input type="radio" name="paymentMethod" value="Cash or other — I'll coordinate with Joey directly" /> Cash or other — I'll coordinate with Joey directly</label>
+          <label class="radio-label"><input type="radio" name="paymentMethod" value="Venmo" required /> Venmo</label>
+          <label class="radio-label"><input type="radio" name="paymentMethod" value="Cash or other, I'll coordinate with Joey directly" /> Cash or other, I'll coordinate with Joey directly</label>
         </fieldset>
         <p class="field-error" id="errPayment" hidden></p>
 
@@ -159,7 +162,7 @@
         <p class="muted">If that doesn't open the app, search @joey-white-1 in Venmo.</p>
       </div>
 
-      <p id="cashBlock" hidden>Got it — coordinate payment with Joey directly before Thursday 5pm.</p>
+      <p id="cashBlock" hidden>Got it. Coordinate payment with Joey directly before Thursday 5pm.</p>
 
       <div class="cal-row">
         <a class="btn" id="gcalBtn" target="_blank" rel="noopener" href="#">Add to Google Calendar</a>

@@ -30,6 +30,17 @@ function getSignupsSheet_() {
 }
 
 function doPost(e) {
+  // Guards the read-then-append below against a race when two people
+  // submit at nearly the same moment.
+  const lock = LockService.getScriptLock();
+  try {
+    lock.waitLock(10000);
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: "error", message: "Could not acquire lock, please retry." }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
   try {
     const data = JSON.parse(e.postData.contents);
     const sheet = getSignupsSheet_();
@@ -53,6 +64,8 @@ function doPost(e) {
     return ContentService
       .createTextOutput(JSON.stringify({ status: "error", message: err.message }))
       .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
   }
 }
 
