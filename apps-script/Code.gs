@@ -46,7 +46,7 @@ function doPost(e) {
     const sheet = getSignupsSheet_();
 
     // "Paid?" is left blank on purpose. Joey checks Venmo and fills this in
-    // manually (Y/N or a note like "cash") — we do not auto-detect payment.
+    // manually (Y/N or a note like "cash"). Payment is never auto-detected.
     sheet.appendRow([
       data.timestamp || new Date().toISOString(),
       data.name || "",
